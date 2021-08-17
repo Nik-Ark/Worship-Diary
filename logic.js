@@ -35,9 +35,15 @@ function processPeople(myArr) {
 		let phone2 = phones.length > 1 ? splitted.splice(0, 1).toString() : null;
 		let img1 = splitted.length > 0 ? splitted.splice(0, 1).toString() : null;
 		let img2 = splitted.length > 0 ? splitted.splice(0, 1).toString() : null;
+		if (pair && phone2 === null && phone1 !== null) {
+			if (phone1.includes('SHE')) {
+				phone2 = phone1.replace('SHE', '');
+				phone1 = null;
+			}
+		}
 		if (pair && img2 === null && img1 !== null) {
-			if (img1.includes('she')) {
-				img2 = img1.replace('she', '');
+			if (img1.includes('SHE')) {
+				img2 = img1.replace('SHE', '');
 				img1 = null;
 			}
 		}
