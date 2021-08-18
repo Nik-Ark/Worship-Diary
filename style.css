@@ -1,25 +1,77 @@
+* {
+	box-sizing: border-box;
+}
+
 .container {
+	width: 100%;
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 45px 15px 15px 45px;
+
 	background: rgba(165, 42, 42, 0.199);
+	display: grid;
+	gap: 1rem;
+
+	grid-template-columns: 1fr 1fr;
 }
 
 .card {
+	padding: 8px;
+
 	background: rgba(22, 77, 197, 0.267);
-	border: solid;
-	margin: 40px 0 0 20px;
+	border-style: double;
+	display: grid;
+
+	grid-template-areas:
+		'my_header my_header'
+		'my_image1 my_phone1'
+		'my_image2 my_phone2';
+
+	grid-template-columns: 1fr 5fr;
+	grid-template-rows: 0.3fr 1fr 1fr;
+
+	position: relative;
+}
+
+.card .image1 {
+	grid-area: my_image1;
+}
+
+.card .image2 {
+	grid-area: my_image2;
 }
 
 .card img {
 	width: 95px;
 	height: 145px;
-	margin-left: 20px;
+	margin: 7px;
 }
 
 .card h2 {
-	margin-left: 20px;
+	padding-left: 7px;
+	grid-area: my_header;
 }
 
-.card span {
+.card .phone1 {
+	grid-area: my_phone1;
+	/*
+	position: absolute;
+	bottom: -20px;
+	left: auto;
+	*/
+}
+
+.card .phone2 {
+	grid-area: my_phone2;
+	/*
+	position: absolute;
+	bottom: -20px;
+	left: auto;
+	*/
+}
+
+.card p {
 	font-weight: bold;
 	font-size: 20px;
-	margin-left: 100px;
+	padding: 7px;
 }
