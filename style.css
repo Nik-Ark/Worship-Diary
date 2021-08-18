@@ -1,0 +1,25 @@
+.container {
+	background: rgba(165, 42, 42, 0.199);
+}
+
+.card {
+	background: rgba(22, 77, 197, 0.267);
+	border: solid;
+	margin: 40px 0 0 20px;
+}
+
+.card img {
+	width: 95px;
+	height: 145px;
+	margin-left: 20px;
+}
+
+.card h2 {
+	margin-left: 20px;
+}
+
+.card span {
+	font-weight: bold;
+	font-size: 20px;
+	margin-left: 100px;
+}

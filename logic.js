@@ -52,7 +52,59 @@ function processPeople(myArr) {
 		return new People(id, pair, name, img1, img2, phone1, phone2, table);
 	});
 
-	console.log(myArr);
+	return myArr;
+}
+
+function renderHtml(myArr) {
+	const inputDiv = document.querySelector('.inputDiv');
+	inputDiv.style.display = 'none';
+
+	const container = document.createElement('div');
+	container.className = 'container';
+	for (user of myArr) {
+		const card = document.createElement('div');
+		card.className = 'card';
+
+		/* 		logic starts		*/
+
+		const h3 = document.createElement('h3');
+		h3.innerHTML = user.name;
+		card.appendChild(h3);
+
+		if (user.img1) {
+			const img1 = document.createElement('img');
+			img1.src = './images/he.png'; // `${./images/}user.img1`;
+			card.appendChild(img1);
+		}
+		if (user.phone1) {
+			const phone1 = document.createElement('p');
+			phone1.innerHTML = user.phone1;
+			card.appendChild(phone1);
+		}
+		if (user.img2) {
+			const img2 = document.createElement('img');
+			img2.src = './images/she.png'; // `${./images/}user.img2`;
+			card.appendChild(img2);
+		}
+		if (user.phone2) {
+			const phone2 = document.createElement('p');
+			phone2.innerHTML = user.phone2;
+			card.appendChild(phone2);
+		}
+
+		/*		 logic ends			*/
+
+		// ADD EVENT LISTENER ON EACH CARD FOR RENDERING TABLE PURPOSE
+		const id = user.id;
+		card.addEventListener('click', () => writeTable(id));
+
+		container.appendChild(card);
+	}
+	document.body.appendChild(container);
+}
+
+function writeTable(id) {
+	console.log(id);
 }
 
 /* FILE READING */
@@ -67,9 +119,10 @@ button.addEventListener('click', function () {
 	reader.readAsText(file);
 
 	reader.onload = function () {
-		const myArr = reader.result.trim().split('\n');
+		let myArr = reader.result.trim().split('\n');
 		myArr.sort();
-		processPeople(myArr);
+		myArr = processPeople(myArr);
+		renderHtml(myArr);
 	};
 
 	reader.onerror = function () {
