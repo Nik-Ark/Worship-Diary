@@ -10,18 +10,17 @@
 
 	background: rgba(165, 42, 42, 0.199);
 	display: grid;
-	gap: 1rem;
+	gap: 1.5rem;
 
 	grid-template-columns: 1fr 1fr;
 }
 
 .card {
 	padding: 8px;
-
 	background: rgba(22, 77, 197, 0.267);
 	border-style: double;
-	display: grid;
 
+	display: grid;
 	grid-template-areas:
 		'my_header my_header'
 		'my_image1 my_phone1'
@@ -29,6 +28,8 @@
 
 	grid-template-columns: 1fr 5fr;
 	grid-template-rows: 0.3fr 1fr 1fr;
+
+	box-shadow: 0px 0px 5px 4px rgba(7, 82, 168, 0.74);
 
 	position: relative;
 }
@@ -43,7 +44,7 @@
 
 .card img {
 	width: 95px;
-	height: 145px;
+	height: 140px;
 	margin: 7px;
 }
 
@@ -54,24 +55,27 @@
 
 .card .phone1 {
 	grid-area: my_phone1;
-	/*
+
 	position: absolute;
 	bottom: -20px;
 	left: auto;
-	*/
 }
 
 .card .phone2 {
 	grid-area: my_phone2;
-	/*
+
 	position: absolute;
 	bottom: -20px;
 	left: auto;
-	*/
 }
 
 .card p {
 	font-weight: bold;
 	font-size: 20px;
 	padding: 7px;
+}
+
+.card:hover {
+	transition: 0.3s;
+	transform: scale(1.01);
 }
