@@ -8,7 +8,7 @@
 	margin: 0 auto;
 	padding: 45px 15px 15px 45px;
 
-	background: rgba(165, 42, 42, 0.199);
+	background: rgba(165, 42, 42, 0.096);
 	display: grid;
 	gap: 1.5rem;
 
@@ -57,7 +57,7 @@
 	grid-area: my_phone1;
 
 	position: absolute;
-	bottom: -20px;
+	bottom: 7px;
 	left: auto;
 }
 
@@ -65,14 +65,20 @@
 	grid-area: my_phone2;
 
 	position: absolute;
-	bottom: -20px;
+	bottom: 7px;
 	left: auto;
 }
 
-.card p {
+.card .phone1 h7,
+.card .phone2 h7 {
 	font-weight: bold;
 	font-size: 20px;
 	padding: 7px;
+}
+
+.card .phone1 p,
+.card .phone2 p {
+	margin: 0 0 15px 0;
 }
 
 .card:hover {
