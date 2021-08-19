@@ -2,24 +2,29 @@
 	box-sizing: border-box;
 }
 
+/*	FOR MOBILE PHONES:
+@media(min-width: 468px) {
+
+	put containers here
+
+}
+*/
+
 .container {
-	width: 100%;
+	flex-basis: auto;
 	max-width: 1170px;
-	margin: 0 auto;
+	margin: auto;
 	padding: 45px 15px 15px 45px;
 
 	background: rgba(165, 42, 42, 0.096);
-	display: grid;
-	gap: 1.5rem;
-
-	grid-auto-rows: min-content;
-	grid-template-columns: 1fr 1fr;
+	display: flex;
 
 	align-items: flex-start;
-	align-content: initial;
+	justify-content: space-around;
 }
 
 .card {
+	margin: 1rem 0.5rem;
 	padding: 8px;
 	background: rgba(22, 77, 197, 0.267);
 	border-style: double;
@@ -37,7 +42,6 @@
 	box-shadow: 0px 0px 5px 4px rgba(7, 82, 168, 0.74);
 
 	position: relative;
-	align-self: initial;
 }
 
 .card .image1 {
@@ -49,14 +53,16 @@
 }
 
 .card img {
-	width: 95px;
-	height: 140px;
-	margin: 7px;
+	width: 90px;
+	height: 130px;
+	margin: 5px;
 }
 
 .card h2 {
 	padding-left: 7px;
 	grid-area: my_header;
+	font-size: 22px;
+	margin: 5px 0;
 }
 
 .card .phone1 {
