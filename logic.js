@@ -1,4 +1,4 @@
-class People {
+class Prayer {
 	constructor(id, pair, name, img1, img2, phone1, phone2, table) {
 		this.id = id;
 		this.pair = pair;
@@ -11,7 +11,7 @@ class People {
 	}
 }
 
-function processPeople(myArr) {
+function processPrayer(myArr) {
 	let prayerTable = new Array(myArr.length);
 	for (let i = 0, length = myArr.length; i < length; i++) {
 		prayerTable[i] = new Array(myArr.length - 1);
@@ -49,7 +49,7 @@ function processPeople(myArr) {
 		}
 		let table = prayerTable[ind];
 
-		return new People(id, pair, name, img1, img2, phone1, phone2, table);
+		return new Prayer(id, pair, name, img1, img2, phone1, phone2, table);
 	});
 
 	return myArr;
@@ -95,7 +95,8 @@ function renderHtml(myArr) {
 		/*		 logic ends			*/
 
 		// ADD EVENT LISTENER ON EACH CARD FOR RENDERING TABLE PURPOSE
-		const id = user.id;
+		const id = user.id; // try instead this = user; writeTable(this.id);
+
 		card.addEventListener('click', () => writeTable(id));
 
 		container.appendChild(card);
@@ -121,7 +122,7 @@ button.addEventListener('click', function () {
 	reader.onload = function () {
 		let myArr = reader.result.trim().split('\n');
 		myArr.sort();
-		myArr = processPeople(myArr);
+		myArr = processPrayer(myArr);
 		renderHtml(myArr);
 	};
 
