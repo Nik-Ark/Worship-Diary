@@ -11,7 +11,7 @@ class Prayer {
 	}
 }
 
-function processPrayer(myArr) {
+function processPrayers(myArr) {
 	let prayerTable = new Array(myArr.length);
 	for (let i = 0, length = myArr.length; i < length; i++) {
 		prayerTable[i] = new Array(myArr.length - 1);
@@ -61,51 +61,91 @@ function renderHtml(myArr) {
 
 	const container = document.createElement('div');
 	container.className = 'container';
+	const leftSection = document.createElement('section');
+	leftSection.className = 'left';
+	const rightSection = document.createElement('section');
+	rightSection.className = 'right';
 	for (user of myArr) {
 		const card = document.createElement('div');
 		card.className = 'card';
 
-		/* 		logic starts		*/
-
-		const h3 = document.createElement('h3');
-		h3.innerHTML = user.name;
-		card.appendChild(h3);
+		const h2 = document.createElement('h2');
+		h2.innerHTML = `${user.id}. ${user.name}`;
+		card.appendChild(h2);
 
 		if (user.img1) {
 			const img1 = document.createElement('img');
-			img1.src = './images/he.png'; // `${./images/}user.img1`;
+			img1.className = 'image1';
+			img1.src = `./images/${user.img1}`;
 			card.appendChild(img1);
 		}
+
+		const phone1 = document.createElement('div');
+		phone1.className = 'phone1';
+		for (let i = 0; i < 4; i++) {
+			const span = document.createElement('span');
+			span.innerHTML = '____________________________________';
+			phone1.appendChild(span);
+		}
 		if (user.phone1) {
-			const phone1 = document.createElement('p');
-			phone1.innerHTML = user.phone1;
-			card.appendChild(phone1);
+			const p = document.createElement('p');
+			p.innerHTML = `${user.phone1.substr(0, 1)} ${user.phone1.substr(
+				1,
+				3
+			)} ${user.phone1.substr(4, 3)} ${user.phone1.substr(
+				7,
+				2
+			)} ${user.phone1.substr(9, 2)}`;
+			phone1.appendChild(p);
 		}
-		if (user.img2) {
-			const img2 = document.createElement('img');
-			img2.src = './images/she.png'; // `${./images/}user.img2`;
-			card.appendChild(img2);
-		}
-		if (user.phone2) {
-			const phone2 = document.createElement('p');
-			phone2.innerHTML = user.phone2;
+		card.appendChild(phone1);
+
+		if (user.pair) {
+			if (user.img2) {
+				const img2 = document.createElement('img');
+				img2.className = 'image2';
+				img2.src = `./images/${user.img2}`;
+				card.appendChild(img2);
+			}
+
+			const phone2 = document.createElement('div');
+			phone2.className = 'phone2';
+			for (let i = 0; i < 4; i++) {
+				const span = document.createElement('span');
+				span.innerHTML = '____________________________________';
+				phone2.appendChild(span);
+			}
+			if (user.phone2) {
+				const p = document.createElement('p');
+				p.innerHTML = `${user.phone2.substr(0, 1)} ${user.phone2.substr(
+					1,
+					3
+				)} ${user.phone2.substr(4, 3)} ${user.phone2.substr(
+					7,
+					2
+				)} ${user.phone2.substr(9, 2)}`;
+				phone2.appendChild(p);
+			}
 			card.appendChild(phone2);
 		}
 
-		/*		 logic ends			*/
-
-		// ADD EVENT LISTENER ON EACH CARD FOR RENDERING TABLE PURPOSE
 		const id = user.id; // try instead this = user; writeTable(this.id);
+		const table = user.table;
+		card.addEventListener('click', () => writeTable(id, table));
 
-		card.addEventListener('click', () => writeTable(id));
-
-		container.appendChild(card);
+		if (id % 2) {
+			leftSection.appendChild(card);
+		} else {
+			rightSection.appendChild(card);
+		}
 	}
+	container.appendChild(leftSection);
+	container.appendChild(rightSection);
 	document.body.appendChild(container);
 }
 
-function writeTable(id) {
-	console.log(id);
+function writeTable(id, table) {
+	alert(`user id: ${id}${'\n'}${table}`);
 }
 
 /* FILE READING */
@@ -122,7 +162,7 @@ button.addEventListener('click', function () {
 	reader.onload = function () {
 		let myArr = reader.result.trim().split('\n');
 		myArr.sort();
-		myArr = processPrayer(myArr);
+		myArr = processPrayers(myArr);
 		renderHtml(myArr);
 	};
 
