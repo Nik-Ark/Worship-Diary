@@ -41,7 +41,7 @@
 
 	box-shadow: 0px 0px 5px 4px rgba(7, 82, 168, 0.74);
 
-	position: relative;
+	/* position: relative; */
 }
 
 .card .image1 {
@@ -54,7 +54,7 @@
 
 .card img {
 	width: 90px;
-	height: 130px;
+	height: 143px;
 	margin: 5px;
 }
 
@@ -62,35 +62,36 @@
 	padding-left: 7px;
 	grid-area: my_header;
 	font-size: 22px;
-	margin: 5px 0;
+	margin: 5px 0 5px 7px;
 }
 
 .card .phone1 {
 	grid-area: my_phone1;
 
-	position: absolute;
+	/* position: absolute;
 	bottom: 7px;
-	left: auto;
+	left: auto; */
 }
 
 .card .phone2 {
 	grid-area: my_phone2;
 
-	position: absolute;
+	/* position: absolute;
 	bottom: 7px;
-	left: auto;
-}
-
-.card .phone1 h7,
-.card .phone2 h7 {
-	font-weight: bold;
-	font-size: 20px;
-	padding: 7px;
+	left: auto; */
 }
 
 .card .phone1 p,
 .card .phone2 p {
-	margin: 0 0 15px 0;
+	margin: 5px 0 0 5px;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.card .phone1 span,
+.card .phone2 span {
+	display: block;
+	margin: 13px 0 0px 5px;
 }
 
 .card:hover {
