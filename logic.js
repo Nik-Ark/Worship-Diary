@@ -142,24 +142,36 @@ function renderHtml(myArr) {
 		}
 
 		if (user.id % 2) {
-			leftPage += user.img1 || user.phone1 ? 55 : 45;
+			leftPage += user.img1 || user.phone1 ? 54 : 45;
 			leftPage += user.pair && (user.img2 || user.phone2) ? 40 : 0;
 		} else {
-			rightPage += user.img1 || user.phone1 ? 55 : 45;
+			rightPage += user.img1 || user.phone1 ? 54 : 45;
 			rightPage += user.pair && (user.img2 || user.phone2) ? 40 : 0;
 		}
-		if (leftPage >= 139) {
-			let span = document.createElement('div');
-			span.innerHTML = `<div>page ends</div>`;
-			leftSection.appendChild(span);
 
+		if (leftPage >= 136) {
+			console.log('leftPage: ', leftPage);
+			for (
+				let i = 0, l = leftPage === 144 ? 2 : leftPage === 162 ? 1 : 3;
+				i < l;
+				i++
+			) {
+				let br = document.createElement('br');
+				leftSection.appendChild(br);
+			}
 			leftPage = 0;
 		}
-		if (rightPage >= 139) {
-			let span = document.createElement('div');
-			span.innerHTML = `<div>page ends</div>`;
-			rightSection.appendChild(span);
 
+		if (rightPage >= 136) {
+			console.log('rightPage: ', rightPage);
+			for (
+				let i = 0, l = rightPage === 144 ? 2 : rightPage === 162 ? 1 : 3;
+				i < l;
+				i++
+			) {
+				let br = document.createElement('br');
+				rightSection.appendChild(br);
+			}
 			rightPage = 0;
 		}
 	}
