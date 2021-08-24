@@ -149,31 +149,58 @@ function renderHtml(myArr) {
 			rightPage += user.pair && (user.img2 || user.phone2) ? 40 : 0;
 		}
 
-		if (leftPage >= 136) {
-			console.log('leftPage: ', leftPage);
-			for (
-				let i = 0, l = leftPage === 144 ? 2 : leftPage === 162 ? 1 : 3;
-				i < l;
-				i++
-			) {
-				let br = document.createElement('br');
-				leftSection.appendChild(br);
-			}
-			leftPage = 0;
-		}
+		/*
+			Подсчитать общую вместимость страницы в соответствии с форматом печати
+			Сохранять прошлую сумму card's в переменную с которой можно сравнивать
+			текущий размер card's и в соответствии с этим делать вывод
+			какое количество <br> добавлять
+		*/
 
-		if (rightPage >= 136) {
-			console.log('rightPage: ', rightPage);
-			for (
-				let i = 0, l = rightPage === 144 ? 2 : rightPage === 162 ? 1 : 3;
-				i < l;
-				i++
-			) {
-				let br = document.createElement('br');
-				rightSection.appendChild(br);
-			}
-			rightPage = 0;
-		}
+		// if (leftPage >= 135) {
+		// 	console.log('leftPage: ', leftPage);
+		// 	for (
+		// 		let i = 0,
+		// 			l =
+		// 				leftPage === 162
+		// 					? 0
+		// 					: leftPage === 153
+		// 					? 2
+		// 					: leftPage === 144
+		// 					? 2
+		// 					: leftPage === 139
+		// 					? 6
+		// 					: 6;
+		// 		i < l;
+		// 		i++
+		// 	) {
+		// 		let br = document.createElement('br');
+		// 		leftSection.appendChild(br);
+		// 	}
+		// 	leftPage = 0;
+		// }
+
+		// if (rightPage >= 135) {
+		// 	console.log('rightPage: ', rightPage);
+		// 	for (
+		// 		let i = 0,
+		// 			l =
+		// 				rightPage === 162
+		// 					? 0
+		// 					: rightPage === 153
+		// 					? 2
+		// 					: rightPage === 144
+		// 					? 2
+		// 					: rightPage === 139
+		// 					? 6
+		// 					: 6;
+		// 		i < l;
+		// 		i++
+		// 	) {
+		// 		let br = document.createElement('br');
+		// 		rightSection.appendChild(br);
+		// 	}
+		// 	rightPage = 0;
+		// }
 	}
 	container.appendChild(leftSection);
 	container.appendChild(rightSection);
@@ -197,7 +224,7 @@ button.addEventListener('click', function () {
 
 	reader.onload = function () {
 		let myArr = reader.result.trim().split('\n');
-		myArr.sort();
+		// myArr.sort();
 		myArr = processPrayers(myArr);
 		renderHtml(myArr);
 	};
