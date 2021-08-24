@@ -25,8 +25,8 @@
 .left .card {
 	margin: 24px 12px;
 	padding: 8px;
-	background: rgba(22, 77, 197, 0.267);
-	border-style: double;
+	background: rgba(22, 78, 197, 0.103);
+	/* border-style: double; */
 
 	display: grid;
 
@@ -37,14 +37,14 @@
 
 	grid-template-columns: 1fr 5fr;
 
-	box-shadow: 0px 0px 5px 4px rgba(7, 82, 168, 0.74);
+	box-shadow: 0px 0px 5px 4px rgba(7, 82, 168, 0.281);
 }
 
 .right .card {
 	margin: 24px 12px;
 	padding: 8px;
-	background: rgba(22, 77, 197, 0.267);
-	border-style: double;
+	background: rgba(22, 78, 197, 0.103);
+	/* border-style: solid; */
 
 	display: grid;
 
@@ -55,7 +55,7 @@
 
 	grid-template-columns: 5fr 1fr;
 
-	box-shadow: 0px 0px 5px 4px rgba(7, 82, 168, 0.74);
+	box-shadow: 0px 0px 5px 4px rgba(7, 82, 168, 0.281);
 }
 
 .card h2 {
@@ -77,6 +77,7 @@
 	width: 90px;
 	height: 143px;
 	margin: 5px;
+	border: solid 2px rgba(0, 0, 0, 0.616);
 }
 
 .card .phone1 {

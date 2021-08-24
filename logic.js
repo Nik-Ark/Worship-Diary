@@ -100,7 +100,7 @@ function renderHtml(myArr) {
 		}
 		card.appendChild(phone1);
 
-		if (user.pair) {
+		if (user.pair && (user.img2 || user.phone2)) {
 			if (user.img2) {
 				const img2 = document.createElement('img');
 				img2.className = 'image2';
