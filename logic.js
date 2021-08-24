@@ -65,6 +65,8 @@ function renderHtml(myArr) {
 	leftSection.className = 'left';
 	const rightSection = document.createElement('section');
 	rightSection.className = 'right';
+	let leftPage = 0;
+	let rightPage = 0;
 	for (user of myArr) {
 		const card = document.createElement('div');
 		card.className = 'card';
@@ -137,6 +139,28 @@ function renderHtml(myArr) {
 			leftSection.appendChild(card);
 		} else {
 			rightSection.appendChild(card);
+		}
+
+		if (user.id % 2) {
+			leftPage += user.img1 || user.phone1 ? 55 : 45;
+			leftPage += user.pair && (user.img2 || user.phone2) ? 40 : 0;
+		} else {
+			rightPage += user.img1 || user.phone1 ? 55 : 45;
+			rightPage += user.pair && (user.img2 || user.phone2) ? 40 : 0;
+		}
+		if (leftPage >= 139) {
+			let span = document.createElement('div');
+			span.innerHTML = `<div>page ends</div>`;
+			leftSection.appendChild(span);
+
+			leftPage = 0;
+		}
+		if (rightPage >= 139) {
+			let span = document.createElement('div');
+			span.innerHTML = `<div>page ends</div>`;
+			rightSection.appendChild(span);
+
+			rightPage = 0;
 		}
 	}
 	container.appendChild(leftSection);
