@@ -150,57 +150,72 @@ function renderHtml(myArr) {
 		}
 
 		/*
-			Подсчитать общую вместимость страницы в соответствии с форматом печати
-			Сохранять прошлую сумму card's в переменную с которой можно сравнивать
+			Подсчитать общую вместимость страницы в соответствии с форматом печати:
+			(const pageSize = ?)
+			значение, сумма card's после которого возможен выход за current Page:
+			(const safeMaxSum = ?)
+			после заполнение оставшейся страницы буффером (<br>)
+			Сохранять прошлую сумму card's в переменную с которой сравнивать ???
+			(let prevPage) ??? (currPage)
 			текущий размер card's и в соответствии с этим делать вывод
-			какое количество <br> добавлять
+			какое количество <br> добавлять.
+
+			Если бы с помощью <br> я мог сдвинуть следующие card's ровно на начало
+			следующей страницы, не нужно было бы считать значение (prevPage)
 		*/
 
-		// if (leftPage >= 135) {
-		// 	console.log('leftPage: ', leftPage);
-		// 	for (
-		// 		let i = 0,
-		// 			l =
-		// 				leftPage === 162
-		// 					? 0
-		// 					: leftPage === 153
-		// 					? 2
-		// 					: leftPage === 144
-		// 					? 2
-		// 					: leftPage === 139
-		// 					? 6
-		// 					: 6;
-		// 		i < l;
-		// 		i++
-		// 	) {
-		// 		let br = document.createElement('br');
-		// 		leftSection.appendChild(br);
-		// 	}
-		// 	leftPage = 0;
-		// }
+		/*							PAGE'S ALIGN ALGORITHM							*/
+		/*
+		if (leftPage >= 135) {
+			console.log('leftPage: ', leftPage);
+			for (
+				let i = 0,
+					l =
+						leftPage === 162
+							? 1
+							: leftPage === 153
+							? 1
+							: leftPage === 148
+							? 4
+							: leftPage === 144
+							? 3
+							: leftPage === 139
+							? 6
+							: 6;
+				i < l;
+				i++
+			) {
+				let br = document.createElement('br');
+				leftSection.appendChild(br);
+			}
+			leftPage = 0;
+		}
 
-		// if (rightPage >= 135) {
-		// 	console.log('rightPage: ', rightPage);
-		// 	for (
-		// 		let i = 0,
-		// 			l =
-		// 				rightPage === 162
-		// 					? 0
-		// 					: rightPage === 153
-		// 					? 2
-		// 					: rightPage === 144
-		// 					? 2
-		// 					: rightPage === 139
-		// 					? 6
-		// 					: 6;
-		// 		i < l;
-		// 		i++
-		// 	) {
-		// 		let br = document.createElement('br');
-		// 		rightSection.appendChild(br);
-		// 	}
-		// 	rightPage = 0;
-		// }
+		if (rightPage >= 135) {
+			console.log('rightPage: ', rightPage);
+			for (
+				let i = 0,
+					l =
+						rightPage === 162
+							? 1
+							: rightPage === 153
+							? 1
+							: rightPage === 148
+							? 4
+							: rightPage === 144
+							? 3
+							: rightPage === 139
+							? 5
+							: 6;
+				i < l;
+				i++
+			) {
+				let br = document.createElement('br');
+				rightSection.appendChild(br);
+			}
+			rightPage = 0;
+		}
+		*/
 	}
 	container.appendChild(leftSection);
 	container.appendChild(rightSection);
