@@ -1,0 +1,30 @@
+.calendar td {
+	padding: 5px;
+	border-spacing: 5px;
+}
+
+.monthDate {
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	background-color: #873e23;
+}
+
+.month {
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+
+.days {
+	font-weight: bold;
+	color: #5c2917;
+	text-align: center;
+	background-color: yellow;
+}
+
+.prayFor {
+	font-weight: bold;
+	color: #5c2917;
+	text-align: center;
+	background-color: #c398ba83;
+}
