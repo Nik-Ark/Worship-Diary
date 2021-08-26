@@ -8,14 +8,20 @@
 		<link href="calendar.css" rel="stylesheet" />
 		<title>Worship Diary</title>
 	</head>
-	<!-- style="background-image: url('./files/coffee.jpg')" -->
-	<body>
-		<div class="inputDiv" style="display: none">
+	<!-- style="background-image: url('./files/lightCoffee.jpg')" -->
+	<body style="background-image: url('./files/lightCoffee.jpg')">
+		<div class="inputDiv">
+			<h1>Молитвенный Дневник</h1>
 			<input type="file" id="inputFile" />
 			<button id="readFileButton">Прочитать файл</button>
+			<footer>Церковь "Слово Истины" версия проекта 0.1</footer>
 		</div>
 
-		<div class="calendar">
+		<div class="calendar" style="display: none">
+			<div>
+				<button id="goBack">Вернуться</button>
+				<button>Показать все Таблицы</button>
+			</div>
 			<table align="center">
 				<tr class="monthDate">
 					<td colspan="5" rowspan="3" class="month">
@@ -1199,97 +1205,6 @@
 					<td>0</td>
 				</tr>
 			</table>
-		</div>
-
-		<div class="container" style="display: none">
-			<section class="left">
-				<div class="card">
-					<h2>1. Авдеевы Семен и Анастасия</h2>
-					<img src="images/he.png" class="image1" />
-					<div class="phone1">
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<p>тел.: 8 999 239 28 30</p>
-					</div>
-					<img src="images/she.png" class="image2" />
-					<div class="phone2">
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<p>тел.: 8 911 739 28 30</p>
-					</div>
-				</div>
-				<div class="card">
-					<h2>3. Щукин Ефим Гайдарович</h2>
-					<div class="phone1">
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<p>тел.: 8 909 111 53 14</p>
-					</div>
-				</div>
-				<div class="card">
-					<h2>8. Путины Владимир и Алина</h2>
-					<img src="images/he.png" class="image1" />
-					<div class="phone1">
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<p>тел.: 8 999 239 28 30</p>
-					</div>
-					<div class="phone2">
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<p>тел.: 8 911 739 28 30</p>
-					</div>
-				</div>
-			</section>
-
-			<section class="right">
-				<div class="card">
-					<h2>2. Алексеев Никита Юрьевич</h2>
-					<div class="phone1">
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-					</div>
-				</div>
-				<div class="card">
-					<h2>8. Путины Владимир и Алина</h2>
-					<img src="images/he.png" class="image1" />
-					<div class="phone1">
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<p>тел.: 8 999 239 28 30</p>
-					</div>
-					<div class="phone2">
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<p>тел.: 8 911 739 28 30</p>
-					</div>
-				</div>
-				<div class="card">
-					<h2>2. Алексеев Никита Юрьевич</h2>
-					<div class="phone1">
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-						<span>____________________________________</span>
-					</div>
-				</div>
-			</section>
 		</div>
 
 		<script src="logic.js"></script>

@@ -24,6 +24,8 @@ function processPrayers(myArr) {
 			}
 		}
 	}
+	/* 			DEMONSTRATION OF PRAYER'S TABLE MATRIX				*/
+	console.log(prayerTable);
 
 	myArr = myArr.map(function (el, ind) {
 		let id = ind + 1;
@@ -91,13 +93,17 @@ function renderHtml(myArr) {
 		}
 		if (user.phone1) {
 			const p = document.createElement('p');
-			p.innerHTML = `${user.phone1.substr(0, 1)} ${user.phone1.substr(
-				1,
-				3
-			)} ${user.phone1.substr(4, 3)} ${user.phone1.substr(
-				7,
-				2
-			)} ${user.phone1.substr(9, 2)}`;
+			if (user.phone1.includes('-')) {
+				p.innerHTML = user.phone1;
+			} else {
+				p.innerHTML = `${user.phone1.substr(0, 1)} ${user.phone1.substr(
+					1,
+					3
+				)} ${user.phone1.substr(4, 3)} ${user.phone1.substr(
+					7,
+					2
+				)} ${user.phone1.substr(9, 2)}`;
+			}
 			phone1.appendChild(p);
 		}
 		card.appendChild(phone1);
@@ -119,23 +125,26 @@ function renderHtml(myArr) {
 			}
 			if (user.phone2) {
 				const p = document.createElement('p');
-				p.innerHTML = `${user.phone2.substr(0, 1)} ${user.phone2.substr(
-					1,
-					3
-				)} ${user.phone2.substr(4, 3)} ${user.phone2.substr(
-					7,
-					2
-				)} ${user.phone2.substr(9, 2)}`;
+				if (user.phone2.includes('-')) {
+					p.innerHTML = user.phone2;
+				} else {
+					p.innerHTML = `${user.phone2.substr(0, 1)} ${user.phone2.substr(
+						1,
+						3
+					)} ${user.phone2.substr(4, 3)} ${user.phone2.substr(
+						7,
+						2
+					)} ${user.phone2.substr(9, 2)}`;
+				}
 				phone2.appendChild(p);
 			}
 			card.appendChild(phone2);
 		}
 
-		const id = user.id; // try instead this = user; writeTable(this.id);
 		const table = user.table;
-		card.addEventListener('click', () => writeTable(id, table));
+		card.addEventListener('click', () => writeTable(table));
 
-		if (id % 2) {
+		if (user.id % 2) {
 			leftSection.appendChild(card);
 		} else {
 			rightSection.appendChild(card);
@@ -227,8 +236,26 @@ function renderHtml(myArr) {
 	document.body.appendChild(container);
 }
 
-function writeTable(id, table) {
-	alert(`user id: ${id}${'\n'}${table}`);
+function writeTable(table) {
+	const container = document.querySelector('.container');
+	const calendar = document.querySelector('.calendar');
+	const prayFor = document.querySelectorAll('tr.prayFor > td');
+	const button = document.querySelector('#goBack');
+	let days = Array.from(prayFor);
+
+	const length = table.length;
+
+	days = days.map((el, ind) => {
+		el.innerHTML = table[(currInd = ind % length)];
+	});
+
+	container.style.display = 'none';
+	calendar.style.display = 'inline';
+
+	button.addEventListener('click', function () {
+		calendar.style.display = 'none';
+		container.style.display = 'flex';
+	});
 }
 
 /* FILE READING */
@@ -244,7 +271,7 @@ button.addEventListener('click', function () {
 
 	reader.onload = function () {
 		let myArr = reader.result.trim().split('\n');
-		// myArr.sort();
+		myArr.sort();
 		myArr = processPrayers(myArr);
 		renderHtml(myArr);
 	};
