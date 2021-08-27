@@ -268,6 +268,10 @@ function writeTable(id, name, table) {
 
 	container.style.display = 'none';
 	calendar.style.display = 'inline';
+	calendar.scrollIntoView({
+		behavior: 'smooth',
+		block: 'start', // start, center, end, nearest
+	});
 
 	button.addEventListener('click', function () {
 		calendar.style.display = 'none';
