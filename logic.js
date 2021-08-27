@@ -94,7 +94,13 @@ function renderHtml(myArr) {
 		if (user.phone1) {
 			const p = document.createElement('p');
 			if (user.phone1.includes('-')) {
-				p.innerHTML = user.phone1;
+				p.innerHTML = `${user.phone1.substr(0, 3)} ${user.phone1.substr(
+					3,
+					1
+				)} ${user.phone1.substr(4, 2)} ${user.phone1.substr(
+					6,
+					1
+				)} ${user.phone1.substr(7, 2)}`;
 			} else {
 				p.innerHTML = `${user.phone1.substr(0, 1)} ${user.phone1.substr(
 					1,
@@ -126,7 +132,13 @@ function renderHtml(myArr) {
 			if (user.phone2) {
 				const p = document.createElement('p');
 				if (user.phone2.includes('-')) {
-					p.innerHTML = user.phone2;
+					p.innerHTML = `${user.phone2.substr(0, 3)} ${user.phone2.substr(
+						3,
+						1
+					)} ${user.phone2.substr(4, 2)} ${user.phone2.substr(
+						6,
+						1
+					)} ${user.phone2.substr(7, 2)}`;
 				} else {
 					p.innerHTML = `${user.phone2.substr(0, 1)} ${user.phone2.substr(
 						1,
