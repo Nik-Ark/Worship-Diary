@@ -104,6 +104,7 @@
 .card:hover {
 	transition: 0.3s;
 	transform: scale(1.015);
+	cursor: pointer;
 }
 
 .left .card .phone1,

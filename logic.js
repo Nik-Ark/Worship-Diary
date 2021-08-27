@@ -142,7 +142,9 @@ function renderHtml(myArr) {
 		}
 
 		const table = user.table;
-		card.addEventListener('click', () => writeTable(table));
+		const name = user.name;
+		const id = user.id;
+		card.addEventListener('click', () => writeTable(id, name, table));
 
 		if (user.id % 2) {
 			leftSection.appendChild(card);
@@ -236,11 +238,12 @@ function renderHtml(myArr) {
 	document.body.appendChild(container);
 }
 
-function writeTable(table) {
+function writeTable(id, name, table) {
 	const container = document.querySelector('.container');
 	const calendar = document.querySelector('.calendar');
 	const prayFor = document.querySelectorAll('tr.prayFor > td');
 	const button = document.querySelector('#goBack');
+	const header = document.querySelector('#calendarHeader');
 	let days = Array.from(prayFor);
 
 	const length = table.length;
@@ -248,6 +251,8 @@ function writeTable(table) {
 	days = days.map((el, ind) => {
 		el.innerHTML = table[(currInd = ind % length)];
 	});
+
+	header.innerHTML = `${id}. ${name}:`;
 
 	container.style.display = 'none';
 	calendar.style.display = 'inline';

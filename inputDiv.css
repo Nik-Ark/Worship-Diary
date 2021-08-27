@@ -12,6 +12,8 @@
 	padding: 0.4rem 1rem 0.45rem 0.4rem;
 	cursor: pointer;
 	background: rgba(22, 74, 195, 0.219);
+	font-size: 18px;
+	color: #03153f;
 }
 
 .inputDiv input:hover {
@@ -27,14 +29,14 @@
 .inputDiv button {
 	margin-top: 10rem;
 	cursor: pointer;
-	padding: 0.8rem 1.5rem 1rem 1.5rem;
+	padding: 0.8rem 1.5rem 1.2rem 1.5rem;
 	border-radius: 0.75rem;
 	line-height: 0.5rem;
-	font-size: 22px;
+	font-size: 24px;
 	font-weight: 100;
 	font-style: oblique;
 	background: rgba(22, 74, 195, 0.219);
-	color: #012880;
+	color: #03153f;
 	border: 1px solid #012880;
 }
 
