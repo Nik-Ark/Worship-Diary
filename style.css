@@ -10,54 +10,6 @@
 }
 */
 
-.inputDiv {
-	font-size: 22px;
-	text-align: center;
-	font-style: oblique;
-	color: #012880;
-}
-
-.inputDiv input {
-	margin-right: 25px;
-	border: 1px solid #3c1fc0;
-	border-radius: 0.75rem;
-	padding: 0.4rem 1rem 0.45rem 0.4rem;
-	cursor: pointer;
-
-	box-shadow: 0 1rem 1.25rem 0 rgba(22, 75, 195, 0.5),
-		0 -0.25rem 1.5rem rgb(15, 146, 155) inset,
-		0 0.75rem 0.5rem rgba(255, 255, 255, 0.4) inset,
-		0 0.25rem 0.5rem 0 rgb(113, 149, 155) inset;
-}
-
-.inputDiv ::-webkit-file-upload-button {
-	background: rgba(22, 75, 195, 0.5);
-	border-radius: 0.75rem;
-}
-
-.inputDiv button {
-	margin-top: 10rem;
-	cursor: pointer;
-	padding: 0.8rem 1.5rem 1rem 1.5rem;
-	border-radius: 0.75rem;
-	line-height: 0.5rem;
-	font-size: 22px;
-	font-weight: 100;
-	font-style: oblique;
-
-	border: 1px solid #012880;
-
-	box-shadow: 0 1rem 1.25rem 0 rgba(22, 75, 195, 0.5),
-		0 -0.25rem 1.5rem rgb(15, 146, 155) inset,
-		0 0.75rem 0.5rem rgba(255, 255, 255, 0.4) inset,
-		0 0.25rem 0.5rem 0 rgb(113, 149, 155) inset;
-}
-
-.inputDiv footer {
-	margin-top: 18rem;
-	font-weight: bold;
-}
-
 .container {
 	flex-basis: auto;
 	max-width: 1170px;

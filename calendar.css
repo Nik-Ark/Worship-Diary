@@ -32,10 +32,15 @@
 .calendar button {
 	margin: 0.2rem 0 0.2rem 2.6rem;
 	padding: 0.2rem 0.2rem;
-	border: 3px solid #873e23;
 	border-radius: 0.75rem;
-	background: #872341ec;
+	background: rgba(22, 75, 195, 0.5);
 	font-size: 1rem;
 	font-weight: bold;
 	color: white;
+	cursor: pointer;
+}
+
+.calendar button:hover {
+	transition: 0.3s;
+	transform: scale(1.1);
 }

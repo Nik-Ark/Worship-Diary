@@ -1,0 +1,49 @@
+.inputDiv {
+	font-size: 22px;
+	text-align: center;
+	font-style: oblique;
+	color: #012880;
+}
+
+.inputDiv input {
+	margin-right: 25px;
+	border: 1px solid #3c1fc0;
+	border-radius: 0.75rem;
+	padding: 0.4rem 1rem 0.45rem 0.4rem;
+	cursor: pointer;
+	background: rgba(22, 74, 195, 0.219);
+}
+
+.inputDiv input:hover {
+	transition: 0.3s;
+	transform: scale(1.1);
+}
+
+.inputDiv ::-webkit-file-upload-button {
+	background: rgba(22, 75, 195, 0.5);
+	border-radius: 0.75rem;
+}
+
+.inputDiv button {
+	margin-top: 10rem;
+	cursor: pointer;
+	padding: 0.8rem 1.5rem 1rem 1.5rem;
+	border-radius: 0.75rem;
+	line-height: 0.5rem;
+	font-size: 22px;
+	font-weight: 100;
+	font-style: oblique;
+	background: rgba(22, 74, 195, 0.219);
+	color: #012880;
+	border: 1px solid #012880;
+}
+
+.inputDiv button:hover {
+	transition: 0.3s;
+	transform: scale(1.1);
+}
+
+.inputDiv footer {
+	margin-top: 18rem;
+	font-weight: bold;
+}
